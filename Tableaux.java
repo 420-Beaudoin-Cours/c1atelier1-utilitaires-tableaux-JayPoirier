@@ -27,6 +27,10 @@ public class Tableaux {
         }
     }
 
+    public static void print(int[] tab){
+        System.out.println(tab);
+    }
+
     public static void trierCroissantSSS(String[] tab){
         int imin;
         for (int i=0; i<tab.length-1; i++){
