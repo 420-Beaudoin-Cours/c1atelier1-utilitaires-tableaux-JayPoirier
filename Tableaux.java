@@ -1,5 +1,5 @@
 /**
- * @author France Beaudoin
+ * @author France Beaudoindddddddddddddddddd
  */
 public class Tableaux {
     private static void permute(int[] tab, int i1, int i2){
