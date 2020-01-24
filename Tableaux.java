@@ -1,5 +1,5 @@
 /**
- * @author France Beaudoindddddddddddddddddd
+ * @author France Beaudoin
  */
 public class Tableaux {
     private static void permute(int[] tab, int i1, int i2){
@@ -14,7 +14,7 @@ public class Tableaux {
         tab[i2] = transit;
     }
 
-    public static void trierCroissantSSS(int[] tab){
+    public static void trierDecroissantSSS(int[] tab){
         int imin;
         for (int i=0; i<tab.length-1; i++){
             imin = i;
