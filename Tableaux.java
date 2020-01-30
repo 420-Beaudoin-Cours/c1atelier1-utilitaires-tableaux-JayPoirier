@@ -33,32 +33,40 @@ public class Tableaux {
         System.out.println(Arrays.toString(tab));
     }
 
-    public static void maximum(int[] tab) {
-        int imax;
-        for (int i = 0; i < tab.length - 1; i++) {
-            imax = i;
-            for (int j = i + 1; j < tab.length; j++) {
-                if (tab[j] > tab[imax])
-                    imax = j;
+    public static int maximum(int[] tab) {
+        int max = tab[0];
+        for (int i = 0; i < tab.length; i++){
+                if (tab[i] > max)
+                    max = tab[i];
             }
-            if (imax != i)
-                permute(tab, i, imax);
-        }
-        System.out.println((tab[0]));
+        return max;
     }
 
-    public static void minimum(int[] tab) {
-        int imin;
-        for (int i = 0; i < tab.length - 1; i++) {
-            imin = i;
-            for (int j = i + 1; j < tab.length; j++) {
-                if (tab[j] < tab[imin])
-                    imin = j;
-            }
-            if (imin != i)
-                permute(tab, i, imin);
+    public static int minimum(int[] tab) {
+        int min = tab[0];
+        for (int i = 0; i < tab.length; i++){
+            if (tab[i] < min)
+                min = tab[i];
         }
-        System.out.println((tab[0]));
+        return min;
+    }
+
+    public static float moyenne(int[] tab){
+        float moyenne;
+        float somme = 0;
+        for (int i = 0; i < tab.length; i++){
+            somme += tab[i];
+        }
+        moyenne = somme / tab.length;
+        return moyenne;
+    }
+
+    public static int fouilleSeq(int[] tab, int wanted){
+
+        for (int i = 0; i < tab.length; i++){
+
+        }
+        return 0;
     }
 
     public static void trierCroissantSSS(String[] tab){
