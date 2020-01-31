@@ -61,24 +61,74 @@ public class Tableaux {
         return moyenne;
     }
 
-    public static int fouilleSeq(int[] tab, int wanted){
-
-        for (int i = 0; i < tab.length; i++){
-
+    public static int fouilleSeq(int[] tab, int cherche){
+        boolean trouve = false;
+        int i = 0;
+        while (i < tab.length && !trouve){
+            if (tab[i] == cherche)
+                trouve = true;
+            else
+                i++;
         }
-        return 0;
+        if (trouve)
+            return i;
+        else
+            return -1;
     }
 
-    public static void trierCroissantSSS(String[] tab){
+    public static void trierDecroissantSSS(String[] tab){
         int imin;
         for (int i=0; i<tab.length-1; i++){
             imin = i;
             for (int j=i+1; j<tab.length; j++){
-                if (Integer.parseInt(tab[j]) < Integer.parseInt(tab[imin]))
+                if (Integer.parseInt(tab[j]) > Integer.parseInt(tab[imin]))
                     imin = j;
             }
             if (imin != i)
                 permute(tab, i, imin);
         }
+    }
+    public static void print(String[] tab){
+        System.out.println(Arrays.toString(tab));
+    }
+
+    public static String maximum(String[] tab) {
+        String max = tab[0];
+        for (int i = 0; i < tab.length; i++){
+            if (tab[i].compareTo(max) > 0)
+                max = tab[i];
+        }
+        return max;
+    }
+    public static String minimum(String[] tab) {
+        String min = tab[0];
+        for (int i = 0; i < tab.length; i++){
+            if (tab[i].compareTo(min) < 0)
+                min = tab[i];
+        }
+        return min;
+    }
+    public static float moyenne(String[] tab){
+        float moyenne;
+        float somme = 0;
+        for (int i = 0; i < tab.length; i++){
+            somme += Integer.parseInt(tab[i]);
+        }
+        moyenne = somme / tab.length;
+        return moyenne;
+    }
+    public static int fouilleSeq(String[] tab, int cherche){
+        boolean trouve = false;
+        int i = 0;
+        while (i < tab.length && !trouve){
+            if (Integer.parseInt(tab[i]) == cherche)
+                trouve = true;
+            else
+                i++;
+        }
+        if (trouve)
+            return i;
+        else
+            return -1;
     }
 }
